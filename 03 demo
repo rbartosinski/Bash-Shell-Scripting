@@ -1,0 +1,15 @@
+#Zmienne - konsola demo
+#Autor: Radek
+
+$ checking="witaj"
+$ filename="check.txt"
+$ echo $filename
+$ touch $filename
+$ filenames="check check2"
+$ touch $filenames
+$ ls -l $filenames
+-rw-r--r-- 1 radek radek 0 lut  2 12:16 check
+-rw-r--r-- 1 radek radek 0 lut  2 12:16 check2
+$ echo $checking, $USER
+$ opakowane="$checking, $USER"
+$ echo $opakowane
