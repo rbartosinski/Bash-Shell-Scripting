@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#Prosty skrypt tworzenia notatki
+#Autor: Radek
+
+#echo $1 >> ~/notka.txt
+#echo $* >> ~/notka.txt
+#echo $(date): $* >> notka.txt
+
+echo $(date): $* >> ~/notka.txt
+echo Notatka zapisana: $*

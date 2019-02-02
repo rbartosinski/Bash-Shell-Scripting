@@ -1,0 +1,11 @@
+$ ./01
+$ ls -l 01
+$ chmod u+x 01
+$ chmod u-x 01
+$ chmod a+x 01
+$ cat notka.txt
+$ PATH=$PATH:~/Pulpit/shell
+Shebang: #!/bin/bash
+Shebang: #!/usr/bin/env bash
+$ type ls
+$ type 02
