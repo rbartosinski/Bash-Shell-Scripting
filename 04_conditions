@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Prosty skrypt tworzenia notatki
+# Autor: Radek
+
+# pobierz datę
+date=$(date)
+
+# pobierz temat
+topic="$1"
+
+# nazwa pliku
+# filename=~/${topic}notka.txt
+# filename=~/"$topic"notka.txt
+filename="${HOME}/${topic}notka.txt"
+
+# Zapytaj użytkownika o input
+read -p "Twoja notka: " note
+
+if [[ $note ]]; then
+    echo "$date: $note" >> "$filename"
+    echo "Notatka '$note' zapisana do pliku $filename"
+else
+    echo "Nie zapisano. Brak wprowadzonej notatki"
+fi

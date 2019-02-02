@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# Skrypt sprawdzający istnienie innych skryptów
+# Autor: Radek
+
+# Czy został podany argument?
+if [[ ! $1 ]]; then
+    echo "Brakuje argumentu"
+    exit 1
+fi
+
+scriptname="$1"
+bindir="${HOME}/bin"
+filename="${bindir}/${scriptname}"
+
+if [[ -e $filename ]]; then
+    echo "Plik ${filename} już istnieje"
+    exit 1
+fi
+
+if type "$scriptname"; then
+    echo "Już istnieje komenda o nazwie ${scriptname}"
+    exit 1
+fi
+
+# Sprawdzenie czy katalog bin isnieje
+if [[ ! -d $bindir ]]; then
+    if mkdir "$bindir"; then
+        echo "Stworzono ${bindir}"
+    else
+        cho "Nie można stworzyć ${bindir}"
+        exit 1
+    fi
+fi
+
+# Tworzenie skryptu pojedyńczej linii
+echo '#!/bin/bash' > "$filename"
+# Dodawanie pozwoleń
+chmod u+x "$filename"
+# Otwieranie
+if [[ $EDITOR ]]; then
+    $EDITOR "$filename"
+else
+    echo "Skrypt utworzony, ale nie można otworzyć w edytorze bo zmienna nie jest przypisana"
+fi
+
+exit 0

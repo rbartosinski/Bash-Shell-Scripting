@@ -9,3 +9,16 @@ Shebang: #!/bin/bash
 Shebang: #!/usr/bin/env bash
 $ type ls
 $ type 02
+$ man read
+$ help read
+
+# debugowanie:
+#!/bin/bash -x
+# set -x
+# set +x
+
+$ if mkdir a; then echo "ok"; else echo "error"; fi
+$ help if
+
+$ export EDITOR=vim
+$ help test
