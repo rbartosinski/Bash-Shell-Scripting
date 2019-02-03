@@ -1,0 +1,12 @@
+#!/bin/bash
+
+case $1 in
+    kot)
+        echo "miał";;
+    pies)
+        echo "hau";;
+    krowa)
+        echo "muuu";;
+    *)
+        echo "nieznane zwierze"
+esac

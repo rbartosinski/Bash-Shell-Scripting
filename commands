@@ -5,6 +5,7 @@ $ chmod u-x 01
 $ chmod a+x 01
 $ cat notka.txt
 $ PATH=$PATH:~/Pulpit/shell
+$ PATH=$PATH:~/workspace/Bash-Shell-Scripting
 Shebang: #!/bin/bash
 Shebang: #!/usr/bin/env bash
 $ type ls
@@ -20,5 +21,25 @@ $ help read
 $ if mkdir a; then echo "ok"; else echo "error"; fi
 $ help if
 
+$ checking="witaj"
+$ echo $checking, $USER
+$ opakowane="$checking, $USER"
+$ echo $opakowane
+
+$ filename="check.txt"
+$ echo $filename
+$ touch $filename
+$ filenames="check check2"
+$ touch $filenames
+$ ls -l $filenames
+
 $ export EDITOR=vim
 $ help test
+
+# output zapisany do pliku out_file
+$ 04_conditions > out_file
+
+# dane do read wprowadzone z pliku in_file
+$ 04_conditions < in_file
+
+$ touch {a..d}.mdt

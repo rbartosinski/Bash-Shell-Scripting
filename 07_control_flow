@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Zgadywanka
+# Autor: Radek
+
+target=$(($RANDOM % 100))
+
+guess=
+
+until [[ $guess -eq $target ]]; do
+    read -p "Wprowadź liczbę: " guess
+    if [[ $guess -lt $target ]]; then
+        echo "Zbyt mała. Spróbuj wyższą!"
+    elif [[ $guess -gt $target ]]; then
+        echo "Zbyt duża. Spróbuj niższą!"
+    else
+        echo "<jupi> udało się!"
+    fi
+done
+
+exit 0
